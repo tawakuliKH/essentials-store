@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 import ProductRange from "./components/ProductRange";
 import About from "./components/About";
 import VisitUs from "./components/VisitUs";
@@ -23,6 +25,41 @@ function PinIcon() {
 }
 
 function App() {
+  const mobileMenuRef = useRef(null);
+
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      const menu = mobileMenuRef.current;
+
+      if (menu?.open && !menu.contains(event.target)) {
+        menu.open = false;
+      }
+    }
+
+    function handleEscape(event) {
+      const menu = mobileMenuRef.current;
+
+      if (event.key === "Escape" && menu?.open) {
+        menu.open = false;
+        menu.querySelector("summary")?.focus();
+      }
+    }
+
+    document.addEventListener("click", handleOutsideClick);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  function closeMobileMenu(event) {
+    if (event.target.closest("a") && mobileMenuRef.current) {
+      mobileMenuRef.current.open = false;
+    }
+  }
+
   return (
     <>
       <a className="skip" href="#main">
@@ -64,14 +101,17 @@ function App() {
             <ArrowIcon />
           </a>
 
-          <details className="mobile-menu">
+          <details className="mobile-menu" ref={mobileMenuRef}>
             <summary aria-label="Toggle navigation">
               <span />
               <span />
               <span />
             </summary>
 
-            <nav aria-label="Mobile navigation">
+            <nav
+              aria-label="Mobile navigation"
+              onClick={closeMobileMenu}
+            >
               <a href="#range">Our range</a>
               <a href="#about">Our story</a>
               <a href="#questions">Good to know</a>
@@ -157,6 +197,7 @@ function App() {
             </div>
           </div>
         </section>
+
         <ProductRange />
         <About />
         <VisitUs />
