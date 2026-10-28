@@ -22,11 +22,13 @@
       type="image/svg+xml"
       href="/assets/favicon.svg?v=2"
     />
+
     <link
       rel="icon"
       href="/assets/favicon.ico?v=2"
       sizes="any"
     />
+
     <link
       rel="apple-touch-icon"
       href="/assets/icon-180.png"
@@ -65,6 +67,67 @@
       property="og:image:alt"
       content="Illustrative arrangement of cookware and everyday household essentials"
     />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Store",
+            "@id": "https://zwantradingltd.co.uk/#store",
+            "name": "The Essentials Store",
+            "url": "https://zwantradingltd.co.uk/",
+            "description": "A local retail store in Leeds offering kitchenware, DIY tools, stationery, toys and everyday household essentials.",
+            "slogan": "Big Value. Everyday Prices.",
+            "logo": "https://zwantradingltd.co.uk/assets/logo.webp",
+            "telephone": "+441133183217",
+            "email": "supports@zwantradingltd.co.uk",
+            "parentOrganization": {
+              "@type": "Organization",
+              "name": "Zwan Trading Ltd"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "221 Harehills Lane",
+              "addressLocality": "Leeds",
+              "postalCode": "LS8 3QH",
+              "addressCountry": "GB"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday"
+                ],
+                "opens": "10:00",
+                "closes": "20:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Sunday",
+                "opens": "10:00",
+                "closes": "19:00"
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://zwantradingltd.co.uk/#website",
+            "url": "https://zwantradingltd.co.uk/",
+            "name": "The Essentials Store",
+            "inLanguage": "en-GB",
+            "publisher": {
+              "@id": "https://zwantradingltd.co.uk/#store"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>
