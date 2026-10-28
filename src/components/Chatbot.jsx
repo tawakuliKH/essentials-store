@@ -134,7 +134,9 @@ export default function Chatbot() {
     }, 28000);
 
     try {
-      const response = await fetch("/api/chat", {
+      const response = await fetch(
+  "https://essentials-store-chat.tawakuli456.workers.dev/api/chat",
+  {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -143,7 +145,8 @@ export default function Chatbot() {
           messages: conversation,
         }),
         signal: controller.signal,
-      });
+        }
+);
 
       const data = await response.json().catch(() => {
         throw new Error(
