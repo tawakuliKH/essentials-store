@@ -1,3 +1,5 @@
+import "./ProductRange.css";
+
 const categories = [
   {
     id: "kitchen",
@@ -60,6 +62,21 @@ function CategoryIcon({ type }) {
   );
 }
 
+function tiltCard(event) {
+  if (event.pointerType !== "mouse" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const card = event.currentTarget;
+  const bounds = card.getBoundingClientRect();
+  const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+  const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+  card.style.setProperty("--tilt-x", `${-y * 10}deg`);
+  card.style.setProperty("--tilt-y", `${x * 10}deg`);
+}
+
+function resetTilt(event) {
+  event.currentTarget.style.setProperty("--tilt-x", "0deg");
+  event.currentTarget.style.setProperty("--tilt-y", "0deg");
+}
+
 export default function ProductRange() {
   return (
     <>
@@ -98,18 +115,25 @@ export default function ProductRange() {
           </p>
         </div>
 
-        <div className="category-grid">
+        <div className="category-grid category-grid-3d">
           {categories.map((category) => (
             <a
               key={category.id}
-              className={`category ${category.className}`}
+              className={`category category-3d ${category.className}`}
+              onPointerMove={tiltCard}
+              onPointerLeave={resetTilt}
+              onPointerCancel={resetTilt}
               href={`#${category.id}`}
             >
               <span className="category-number">{category.number}</span>
 
-              <CategoryIcon type={category.icon} />
+              <div className="category-object" aria-hidden="true">
+                <span className="category-orbit" />
+                <span className="category-plinth" />
+                <span className="category-medallion"><CategoryIcon type={category.icon} /></span>
+              </div>
 
-              <div>
+              <div className="category-copy">
                 <h3>{category.title}</h3>
                 <p>{category.description}</p>
               </div>
@@ -142,7 +166,7 @@ export default function ProductRange() {
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-              <div>
+              <div className="category-copy">
                 <h3>{category.title}</h3>
                 <p>{category.details}</p>
               </div>

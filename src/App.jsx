@@ -6,6 +6,7 @@ import VisitUs from "./components/VisitUs";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
+import ProductShowcase from "./components/ProductShowcase";
 
 function ArrowIcon() {
   return (
@@ -167,35 +168,7 @@ function App() {
             </div>
           </div>
 
-          <div className="hero-visual">
-            <img
-              src="/assets/everyday-essentials-1000.webp"
-              srcSet="
-                /assets/everyday-essentials-640.webp 640w,
-                /assets/everyday-essentials-1000.webp 1000w,
-                /assets/everyday-essentials-1536.webp 1536w
-              "
-              sizes="(max-width: 760px) 100vw, 55vw"
-              width="1536"
-              height="1024"
-              alt="Illustrative arrangement of cookware, bowls, utensils and everyday household items"
-              fetchPriority="high"
-            />
-
-            <div className="hero-sticker">
-              <span>
-                Everyday
-                <br />
-                essentials.
-              </span>
-              <strong>Extra useful.</strong>
-              <ArrowIcon />
-            </div>
-
-            <div className="photo-caption">
-              A little inspiration for everyday life.
-            </div>
-          </div>
+          <ProductShowcase />
         </section>
 
         <ProductRange />

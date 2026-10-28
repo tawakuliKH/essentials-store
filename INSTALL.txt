@@ -1,0 +1,16 @@
+ESSENTIALS STORE — 3D UPDATE V2
+Extract the ZIP. Copy its src and public folders INTO your existing essentials-store-react folder. Merge folders, replacing matching files. Do not delete existing folders.
+Run npm.cmd run dev (or refresh your existing local dev server).
+No new dependencies required.
+
+Includes the full updated App.jsx, ProductShowcase.jsx/CSS, ProductRange.jsx/CSS, and the previous three generated scenes in responsive WebP sizes. Works whether or not you installed version 1.
+
+Changes: coverflow with actual neighbouring product photos, perspective rotation, raised frames and floor shadows; four layered category cards with raised icon medallions, pedestals and mouse tilt. Existing swipe, manual navigation, pause and reduced-motion behaviour retained. Backend, API configuration and existing navbar closing behaviour preserved.
+
+Validation: production build and git diff --check pass. Desktop carousel and cards visually checked; 390px mobile card layout checked. Physical-device touch gestures still warrant local testing.
+
+To publish after testing:
+npm.cmd run build
+git add src/App.jsx src/components/ProductShowcase.jsx src/components/ProductShowcase.css src/components/ProductRange.jsx src/components/ProductRange.css public/assets/showcase-*.webp
+git commit -m "Improve 3D product slideshow and category cards"
+git push origin main
