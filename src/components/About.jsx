@@ -23,20 +23,27 @@ export default function About() {
           <p className="eyebrow">HELLO, NEIGHBOUR</p>
 
           <h2 id="about-title">
-            Everyday life.
+            The Essentials Store
             <br />
-            All the essentials.
+            — your everyday shop in Leeds
           </h2>
 
           <p>
-            We believe the things you use every day should be easy to find.
-            That’s the idea behind The Essentials Store: useful choice,
-            everyday value and a welcoming place to shop.
+            The Essentials Store is operated by Zwan Trading Ltd at
+            221 Harehills Lane, Leeds. We bring together kitchenware,
+            DIY tools, stationery, toys and household essentials in
+            one convenient local shop.
           </p>
 
           <p>
-            From kitchenware and household items to tools, stationery and
-            toys, we’re here for the practical little things that make a home.
+            From pots, cutlery and pressure cookers to screwdrivers,
+            screws and creative supplies, explore useful items for
+            your home and everyday life. Visit us in Harehills,
+            open seven days a week.
+          </p>
+
+          <p>
+            <strong>Big Value. Everyday Prices.</strong>
           </p>
 
           <a className="text-link" href="#visit">
