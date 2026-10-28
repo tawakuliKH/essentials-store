@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zwantradingltd.co.uk/sitemap.xml
