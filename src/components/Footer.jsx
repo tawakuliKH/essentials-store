@@ -47,6 +47,20 @@ export default function Footer() {
 
           <a href="#">Back to Top ↑</a>
         </div>
+
+        <div className="container developer-credit">
+          <span>
+            Designed &amp; Developed by{" "}
+            <a
+              href="https://resume-tawakuli.onrender.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Morteza Tawakuli's portfolio"
+            >
+              Morteza Tawakuli ↗
+            </a>
+          </span>
+        </div>
       </footer>
     </>
   );

@@ -40,8 +40,8 @@ export default function VisitUs() {
         </address>
 
         <div className="contact-extras">
-          <a href="mailto:supports@zwantradingltd.co.uk">
-            supports@zwantradingltd.co.uk
+          <a href="mailto:support@zwantradingltd.co.uk">
+            support@zwantradingltd.co.uk
           </a>
 
           <a
@@ -141,9 +141,7 @@ export default function VisitUs() {
 
         <div className="location-bottom">
           <span>
-            <strong>
-              Your Local Essentials Stop.
-            </strong>
+            <strong>Your Local Essentials Stop.</strong>
             <br />
             221 Harehills Lane · LS8 3QH
           </span>
