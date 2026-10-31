@@ -1,3 +1,4 @@
+
 export default function Footer() {
   return (
     <>
@@ -22,13 +23,14 @@ export default function Footer() {
           </div>
 
           <nav aria-label="Footer navigation">
-            <a href="#range">Our range</a>
-            <a href="#about">Our story</a>
-            <a href="#visit">Visit us</a>
+            <a href="#range">Our Range</a>
+            <a href="#about">Our Story</a>
+            <a href="#visit">Visit Us</a>
           </nav>
 
           <a href="tel:+441133183217">
-            0113 318 3217 <span aria-hidden="true">↗</span>
+            0113 318 3217{" "}
+            <span aria-hidden="true">↗</span>
           </a>
         </div>
 
@@ -39,11 +41,11 @@ export default function Footer() {
           </span>
 
           <span>
-            Product imagery is illustrative. Please check availability
-            in store.
+            Product imagery is illustrative.
+            Please check availability in store.
           </span>
 
-          <a href="#">Back to top ↑</a>
+          <a href="#">Back to Top ↑</a>
         </div>
       </footer>
     </>

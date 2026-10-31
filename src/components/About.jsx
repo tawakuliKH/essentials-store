@@ -1,3 +1,4 @@
+
 export default function About() {
   return (
     <section
@@ -25,7 +26,7 @@ export default function About() {
           <h2 id="about-title">
             The Essentials Store
             <br />
-            — your everyday shop in Leeds
+            — Your Everyday Shop in Leeds
           </h2>
 
           <p>
@@ -47,7 +48,7 @@ export default function About() {
           </p>
 
           <a className="text-link" href="#visit">
-            Come and have a look
+            Come and Have a Look
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M4 12h15m-6-6 6 6-6 6" />
             </svg>

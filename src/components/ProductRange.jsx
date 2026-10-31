@@ -1,3 +1,4 @@
+
 import "./ProductRange.css";
 
 const categories = [
@@ -13,7 +14,7 @@ const categories = [
   {
     id: "diy",
     number: "02 / FIX & FINISH",
-    title: "DIY & tools",
+    title: "DIY & Tools",
     description: "For the jobs on your list.",
     className: "diy",
     icon: "tools",
@@ -31,7 +32,7 @@ const categories = [
   {
     id: "toys",
     number: "04 / PLAY & DISCOVER",
-    title: "Toys & play",
+    title: "Toys & Play",
     description: "A little more fun in every day.",
     className: "toys",
     icon: "toy",
@@ -63,11 +64,16 @@ function CategoryIcon({ type }) {
 }
 
 function tiltCard(event) {
-  if (event.pointerType !== "mouse" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (
+    event.pointerType !== "mouse" ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) return;
+
   const card = event.currentTarget;
   const bounds = card.getBoundingClientRect();
   const x = (event.clientX - bounds.left) / bounds.width - 0.5;
   const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+
   card.style.setProperty("--tilt-x", `${-y * 10}deg`);
   card.style.setProperty("--tilt-y", `${x * 10}deg`);
 }
@@ -82,14 +88,14 @@ export default function ProductRange() {
     <>
       <div className="benefit-bar">
         <div className="container">
-          <span>Useful things for real homes</span>
+          <span>Useful Things for Real Homes</span>
 
           <span>
             <span className="benefit-dot" aria-hidden="true">£</span>
-            Everyday value
+            Everyday Value
           </span>
 
-          <span>Find us on Harehills Lane</span>
+          <span>Find Us on Harehills Lane</span>
         </div>
       </div>
 
@@ -102,9 +108,9 @@ export default function ProductRange() {
           <div>
             <p className="eyebrow">EXPLORE THE ESSENTIALS</p>
             <h2 id="range-title">
-              A little of everything.
+              A Little of Everything.
               <br />
-              A lot of everyday useful.
+              A Lot of Everyday Useful.
             </h2>
           </div>
 
@@ -125,12 +131,16 @@ export default function ProductRange() {
               onPointerCancel={resetTilt}
               href={`#${category.id}`}
             >
-              <span className="category-number">{category.number}</span>
+              <span className="category-number">
+                {category.number}
+              </span>
 
               <div className="category-object" aria-hidden="true">
                 <span className="category-orbit" />
                 <span className="category-plinth" />
-                <span className="category-medallion"><CategoryIcon type={category.icon} /></span>
+                <span className="category-medallion">
+                  <CategoryIcon type={category.icon} />
+                </span>
               </div>
 
               <div className="category-copy">
@@ -155,7 +165,9 @@ export default function ProductRange() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">A CLOSER LOOK</p>
-            <h2 id="range-details-title">Find your everyday essentials.</h2>
+            <h2 id="range-details-title">
+              Find Your Everyday Essentials.
+            </h2>
           </div>
         </div>
 
@@ -172,7 +184,7 @@ export default function ProductRange() {
               </div>
 
               <a className="text-link" href="tel:+441133183217">
-                Ask us
+                Ask Us
                 <span aria-hidden="true">↗</span>
               </a>
             </article>

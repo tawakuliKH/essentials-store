@@ -1,3 +1,4 @@
+
 const questions = [
   {
     question: "What can I find in store?",
@@ -41,14 +42,19 @@ export default function FAQ() {
       <div>
         <p className="eyebrow">GOOD TO KNOW</p>
 
-        <h2 id="faq-title">A few useful answers.</h2>
+        <h2 id="faq-title">
+          A Few Useful Answers.
+        </h2>
 
         <p>
           Need something else?
           <br />
 
-          <a className="text-link" href="tel:+441133183217">
-            Give us a call
+          <a
+            className="text-link"
+            href="tel:+441133183217"
+          >
+            Give Us a Call
             <span aria-hidden="true">↗</span>
           </a>
         </p>

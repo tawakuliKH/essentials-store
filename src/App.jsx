@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 
 import ProductRange from "./components/ProductRange";
@@ -31,7 +32,6 @@ function App() {
   useEffect(() => {
     function handleOutsideClick(event) {
       const menu = mobileMenuRef.current;
-
       if (menu?.open && !menu.contains(event.target)) {
         menu.open = false;
       }
@@ -39,7 +39,6 @@ function App() {
 
     function handleEscape(event) {
       const menu = mobileMenuRef.current;
-
       if (event.key === "Escape" && menu?.open) {
         menu.open = false;
         menu.querySelector("summary")?.focus();
@@ -71,7 +70,8 @@ function App() {
         <div className="container">
           <span>Big Value. Everyday Prices.</span>
           <a href="#visit">
-            Your everyday store in Leeds <span aria-hidden="true">↗</span>
+            Your Everyday Store in Leeds{" "}
+            <span aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
@@ -92,13 +92,13 @@ function App() {
           </a>
 
           <nav className="desktop-nav" aria-label="Main navigation">
-            <a href="#range">Our range</a>
-            <a href="#about">Our story</a>
-            <a href="#questions">Good to know</a>
+            <a href="#range">Our Range</a>
+            <a href="#about">Our Story</a>
+            <a href="#questions">Good to Know</a>
           </nav>
 
           <a className="button small header-visit" href="#visit">
-            Visit the store
+            VISIT THE STORE
             <ArrowIcon />
           </a>
 
@@ -113,17 +113,20 @@ function App() {
               aria-label="Mobile navigation"
               onClick={closeMobileMenu}
             >
-              <a href="#range">Our range</a>
-              <a href="#about">Our story</a>
-              <a href="#questions">Good to know</a>
-              <a href="#visit">Visit the store</a>
+              <a href="#range">Our Range</a>
+              <a href="#about">Our Story</a>
+              <a href="#questions">Good to Know</a>
+              <a href="#visit">VISIT THE STORE</a>
             </nav>
           </details>
         </div>
       </header>
 
       <main id="main">
-        <section className="hero container" aria-labelledby="hero-title">
+        <section
+          className="hero container"
+          aria-labelledby="hero-title"
+        >
           <div className="hero-copy">
             <p className="eyebrow">
               <span />
@@ -131,26 +134,27 @@ function App() {
             </p>
 
             <h1 id="hero-title">
-              For your home.
+              For Your Home.
               <br />
-              For your day.
+              For Your Day.
               <br />
-              <span>For less fuss.</span>
+              <span>For Less Fuss.</span>
             </h1>
 
             <p className="hero-description">
-              From the kitchen drawer to your next DIY project. Find the useful
-              things you need, all in one friendly local store.
+              From the kitchen drawer to your next DIY project.
+              Find the useful things you need, all in one
+              friendly local store.
             </p>
 
             <div className="actions">
               <a className="button" href="#range">
-                Explore our range
+                Explore Our Range
                 <ArrowIcon />
               </a>
 
               <a className="text-link" href="#visit">
-                Find us in Leeds
+                Find Us in Leeds
                 <PinIcon />
               </a>
             </div>
@@ -159,7 +163,6 @@ function App() {
               <span className="little-spark" aria-hidden="true">
                 ✳
               </span>
-
               <span>
                 Big Value. Everyday Prices.
                 <br />

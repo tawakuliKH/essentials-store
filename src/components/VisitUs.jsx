@@ -1,3 +1,4 @@
+
 const address = "221 Harehills Lane, Leeds, LS8 3QH";
 
 const directionsUrl =
@@ -19,9 +20,9 @@ export default function VisitUs() {
         </p>
 
         <h2 id="visit-title">
-          Find your essentials
+          Find Your Essentials
           <br />
-          on Harehills Lane.
+          On Harehills Lane.
         </h2>
 
         <p>
@@ -60,9 +61,9 @@ export default function VisitUs() {
           </a>
 
           <p>
-            In-store shopping available. Delivery may be arranged for
-            selected items, depending on your address and order amount.
-            Contact us to enquire.
+            In-store shopping available. Delivery may be
+            arranged for selected items, depending on your
+            address and order amount. Contact us to enquire.
           </p>
         </div>
 
@@ -73,19 +74,22 @@ export default function VisitUs() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Get directions
+            Get Directions
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M4 12h15m-6-6 6 6-6 6" />
             </svg>
           </a>
 
-          <a className="text-link" href="tel:+441133183217">
+          <a
+            className="text-link"
+            href="tel:+441133183217"
+          >
             Call 0113 318 3217
           </a>
         </div>
 
         <div className="opening-hours">
-          <h3>Opening hours</h3>
+          <h3>Opening Hours</h3>
 
           <dl>
             <div>
@@ -100,7 +104,8 @@ export default function VisitUs() {
           </dl>
 
           <p>
-            Leeds local time. Please call ahead for bank holiday hours.
+            Leeds local time. Please call ahead for
+            bank holiday hours.
           </p>
         </div>
       </div>
@@ -112,7 +117,9 @@ export default function VisitUs() {
           <div className="road road-three" />
           <div className="park" />
 
-          <span className="lane-label">HAREHILLS LANE</span>
+          <span className="lane-label">
+            HAREHILLS LANE
+          </span>
 
           <span className="map-marker">
             <svg viewBox="0 0 24 24">
@@ -134,7 +141,9 @@ export default function VisitUs() {
 
         <div className="location-bottom">
           <span>
-            <strong>Your local essentials stop.</strong>
+            <strong>
+              Your Local Essentials Stop.
+            </strong>
             <br />
             221 Harehills Lane · LS8 3QH
           </span>
