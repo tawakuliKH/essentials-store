@@ -9,7 +9,8 @@ const categories = [
     description: "Good things start in the kitchen.",
     className: "kitchen",
     icon: "pot",
-    details: "Pots, pans, pressure cookers, spoons, forks and kitchen utensils.",
+    details:
+      "Pots, pans, pressure cookers, spoons, forks and kitchen utensils.",
   },
   {
     id: "diy",
@@ -18,7 +19,8 @@ const categories = [
     description: "For the jobs on your list.",
     className: "diy",
     icon: "tools",
-    details: "Screwdrivers, nails, screws, paint and tools for everyday projects.",
+    details:
+      "Screwdrivers, nails, screws, paint and tools for everyday projects.",
   },
   {
     id: "stationery",
@@ -27,7 +29,8 @@ const categories = [
     description: "Make room for bright ideas.",
     className: "stationery",
     icon: "pencil",
-    details: "Explore stationery for everyday writing, schoolwork and creativity.",
+    details:
+      "Explore stationery for everyday writing, schoolwork and creativity.",
   },
   {
     id: "toys",
@@ -36,7 +39,8 @@ const categories = [
     description: "A little more fun in every day.",
     className: "toys",
     icon: "toy",
-    details: "Discover our toy selection in store and find a little inspiration for play.",
+    details:
+      "Discover our toy selection in store and find a little inspiration for play.",
   },
 ];
 
@@ -57,7 +61,11 @@ function CategoryIcon({ type }) {
   };
 
   return (
-    <svg className="category-icon" viewBox="0 0 64 64" aria-hidden="true">
+    <svg
+      className="category-icon"
+      viewBox="0 0 64 64"
+      aria-hidden="true"
+    >
       {paths[type]}
     </svg>
   );
@@ -66,21 +74,43 @@ function CategoryIcon({ type }) {
 function tiltCard(event) {
   if (
     event.pointerType !== "mouse" ||
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  ) return;
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+  ) {
+    return;
+  }
 
   const card = event.currentTarget;
   const bounds = card.getBoundingClientRect();
-  const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-  const y = (event.clientY - bounds.top) / bounds.height - 0.5;
 
-  card.style.setProperty("--tilt-x", `${-y * 10}deg`);
-  card.style.setProperty("--tilt-y", `${x * 10}deg`);
+  const x =
+    (event.clientX - bounds.left) / bounds.width - 0.5;
+
+  const y =
+    (event.clientY - bounds.top) / bounds.height - 0.5;
+
+  card.style.setProperty(
+    "--tilt-x",
+    `${-y * 10}deg`
+  );
+
+  card.style.setProperty(
+    "--tilt-y",
+    `${x * 10}deg`
+  );
 }
 
 function resetTilt(event) {
-  event.currentTarget.style.setProperty("--tilt-x", "0deg");
-  event.currentTarget.style.setProperty("--tilt-y", "0deg");
+  event.currentTarget.style.setProperty(
+    "--tilt-x",
+    "0deg"
+  );
+
+  event.currentTarget.style.setProperty(
+    "--tilt-y",
+    "0deg"
+  );
 }
 
 export default function ProductRange() {
@@ -88,14 +118,19 @@ export default function ProductRange() {
     <>
       <div className="benefit-bar">
         <div className="container">
-          <span>Useful Things for Real Homes</span>
+          <span>Useful things for real homes</span>
 
           <span>
-            <span className="benefit-dot" aria-hidden="true">£</span>
-            Everyday Value
+            <span
+              className="benefit-dot"
+              aria-hidden="true"
+            >
+              £
+            </span>
+            Everyday value
           </span>
 
-          <span>Find Us on Harehills Lane</span>
+          <span>Find us on Harehills Lane</span>
         </div>
       </div>
 
@@ -106,11 +141,14 @@ export default function ProductRange() {
       >
         <div className="section-heading">
           <div>
-            <p className="eyebrow">EXPLORE THE ESSENTIALS</p>
+            <p className="eyebrow">
+              EXPLORE THE ESSENTIALS
+            </p>
+
             <h2 id="range-title">
-              A Little of Everything.
+              A little of everything.
               <br />
-              A Lot of Everyday Useful.
+              A lot of everyday useful.
             </h2>
           </div>
 
@@ -135,9 +173,13 @@ export default function ProductRange() {
                 {category.number}
               </span>
 
-              <div className="category-object" aria-hidden="true">
+              <div
+                className="category-object"
+                aria-hidden="true"
+              >
                 <span className="category-orbit" />
                 <span className="category-plinth" />
+
                 <span className="category-medallion">
                   <CategoryIcon type={category.icon} />
                 </span>
@@ -148,13 +190,19 @@ export default function ProductRange() {
                 <p>{category.description}</p>
               </div>
 
-              <span className="circle-arrow" aria-hidden="true">↗</span>
+              <span
+                className="circle-arrow"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
             </a>
           ))}
         </div>
 
         <p className="range-note">
-          Our range changes. Call us to check a particular item before you visit.
+          Our range changes. Call us to check a particular
+          item before you visit.
         </p>
       </section>
 
@@ -164,16 +212,22 @@ export default function ProductRange() {
       >
         <div className="section-heading">
           <div>
-            <p className="eyebrow">A CLOSER LOOK</p>
+            <p className="eyebrow">
+              A CLOSER LOOK
+            </p>
+
             <h2 id="range-details-title">
-              Find Your Everyday Essentials.
+              Find your everyday essentials.
             </h2>
           </div>
         </div>
 
         <div className="range-list">
           {categories.map((category, index) => (
-            <article id={category.id} key={category.id}>
+            <article
+              id={category.id}
+              key={category.id}
+            >
               <span className="list-index">
                 {String(index + 1).padStart(2, "0")}
               </span>
@@ -183,7 +237,10 @@ export default function ProductRange() {
                 <p>{category.details}</p>
               </div>
 
-              <a className="text-link" href="tel:+441133183217">
+              <a
+                className="text-link"
+                href="tel:+441133183271"
+              >
                 Ask Us
                 <span aria-hidden="true">↗</span>
               </a>

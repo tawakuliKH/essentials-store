@@ -70,7 +70,7 @@ function App() {
         <div className="container">
           <span>Big Value. Everyday Prices.</span>
           <a href="#visit">
-            Your Everyday Store in Leeds{" "}
+            Your everyday store in Leeds{" "}
             <span aria-hidden="true">↗</span>
           </a>
         </div>
@@ -91,18 +91,27 @@ function App() {
             />
           </a>
 
-          <nav className="desktop-nav" aria-label="Main navigation">
+          <nav
+            className="desktop-nav"
+            aria-label="Main navigation"
+          >
             <a href="#range">Our Range</a>
             <a href="#about">Our Story</a>
             <a href="#questions">Good to Know</a>
           </nav>
 
-          <a className="button small header-visit" href="#visit">
+          <a
+            className="button small header-visit"
+            href="#visit"
+          >
             VISIT THE STORE
             <ArrowIcon />
           </a>
 
-          <details className="mobile-menu" ref={mobileMenuRef}>
+          <details
+            className="mobile-menu"
+            ref={mobileMenuRef}
+          >
             <summary aria-label="Toggle navigation">
               <span />
               <span />
@@ -134,11 +143,11 @@ function App() {
             </p>
 
             <h1 id="hero-title">
-              For Your Home.
+              For your home.
               <br />
-              For Your Day.
+              For your day.
               <br />
-              <span>For Less Fuss.</span>
+              <span>For less fuss.</span>
             </h1>
 
             <p className="hero-description">
@@ -160,9 +169,13 @@ function App() {
             </div>
 
             <div className="hero-note">
-              <span className="little-spark" aria-hidden="true">
+              <span
+                className="little-spark"
+                aria-hidden="true"
+              >
                 ✳
               </span>
+
               <span>
                 Big Value. Everyday Prices.
                 <br />

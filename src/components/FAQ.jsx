@@ -6,9 +6,10 @@ const questions = [
       "We sell kitchenware, pots, cutlery, pressure cookers, DIY tools, nails, screws, paint, stationery, toys and everyday household items.",
   },
   {
-    question: "Can I check whether an item is available?",
+    question:
+      "Can I check whether an item is available?",
     answer:
-      "Yes. Call 0113 318 3217 or message us on WhatsApp at 07466 353588 to ask about current availability and prices before visiting.",
+      "Yes. Call 0113 318 3271 or message us on WhatsApp at 07466 353588 to ask about current availability and prices before visiting.",
   },
   {
     question: "Do you offer delivery?",
@@ -26,7 +27,8 @@ const questions = [
       "We open Monday to Saturday from 10 AM to 8 PM, and Sunday from 10 AM to 7 PM, Leeds local time. Please call ahead for bank holiday hours.",
   },
   {
-    question: "Who should I contact about returns or warranties?",
+    question:
+      "Who should I contact about returns or warranties?",
     answer:
       "Please contact our team with the item and purchase details. Electrical warranties are available on selected items only, with coverage confirmed at purchase. Our team can explain the applicable conditions and review faulty-item or return enquiries.",
   },
@@ -40,10 +42,12 @@ export default function FAQ() {
       aria-labelledby="faq-title"
     >
       <div>
-        <p className="eyebrow">GOOD TO KNOW</p>
+        <p className="eyebrow">
+          GOOD TO KNOW
+        </p>
 
         <h2 id="faq-title">
-          A Few Useful Answers.
+          A few useful answers.
         </h2>
 
         <p>
@@ -52,7 +56,7 @@ export default function FAQ() {
 
           <a
             className="text-link"
-            href="tel:+441133183217"
+            href="tel:+441133183271"
           >
             Give Us a Call
             <span aria-hidden="true">↗</span>

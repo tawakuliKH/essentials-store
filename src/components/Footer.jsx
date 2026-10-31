@@ -5,7 +5,8 @@ export default function Footer() {
       <div className="closing-strip">
         <div className="container">
           <span>
-            Big Value. <strong>Everyday Prices.</strong>
+            Big Value.{" "}
+            <strong>Everyday Prices.</strong>
           </span>
 
           <span aria-hidden="true">✳</span>
@@ -15,11 +16,16 @@ export default function Footer() {
       <footer>
         <div className="container footer-top">
           <div>
-            <a className="footer-brand" href="#">
+            <a
+              className="footer-brand"
+              href="#"
+            >
               The Essentials Store
             </a>
 
-            <p>Useful finds for everyday life.</p>
+            <p>
+              Useful finds for everyday life.
+            </p>
           </div>
 
           <nav aria-label="Footer navigation">
@@ -28,8 +34,8 @@ export default function Footer() {
             <a href="#visit">Visit Us</a>
           </nav>
 
-          <a href="tel:+441133183217">
-            0113 318 3217{" "}
+          <a href="tel:+441133183271">
+            0113 318 3271{" "}
             <span aria-hidden="true">↗</span>
           </a>
         </div>
@@ -45,7 +51,9 @@ export default function Footer() {
             Please check availability in store.
           </span>
 
-          <a href="#">Back to Top ↑</a>
+          <a href="#">
+            Back to Top ↑
+          </a>
         </div>
 
         <div className="container developer-credit">

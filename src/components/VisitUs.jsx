@@ -20,9 +20,9 @@ export default function VisitUs() {
         </p>
 
         <h2 id="visit-title">
-          Find Your Essentials
+          Find your essentials
           <br />
-          On Harehills Lane.
+          on Harehills Lane.
         </h2>
 
         <p>
@@ -75,16 +75,20 @@ export default function VisitUs() {
             rel="noopener noreferrer"
           >
             Get Directions
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
               <path d="M4 12h15m-6-6 6 6-6 6" />
             </svg>
           </a>
 
           <a
             className="text-link"
-            href="tel:+441133183217"
+            href="tel:+441133183271"
           >
-            Call 0113 318 3217
+            Call 0113 318 3271
           </a>
         </div>
 
@@ -111,7 +115,10 @@ export default function VisitUs() {
       </div>
 
       <div className="location-card">
-        <div className="location-art" aria-hidden="true">
+        <div
+          className="location-art"
+          aria-hidden="true"
+        >
           <div className="road road-one" />
           <div className="road road-two" />
           <div className="road road-three" />
@@ -141,7 +148,9 @@ export default function VisitUs() {
 
         <div className="location-bottom">
           <span>
-            <strong>Your Local Essentials Stop.</strong>
+            <strong>
+              Your local essentials stop.
+            </strong>
             <br />
             221 Harehills Lane · LS8 3QH
           </span>

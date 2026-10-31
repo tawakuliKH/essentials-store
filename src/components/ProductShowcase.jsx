@@ -5,8 +5,8 @@ import "./ProductShowcase.css";
 const slides = [
   {
     image: "everyday-essentials",
-    title: "Everyday, Made Easier.",
-    label: "A Little of Everything",
+    title: "Everyday, made easier.",
+    label: "A little of everything",
     category: "Explore Our Range",
     href: "#range",
     colour: "#ffb51b",
@@ -14,7 +14,7 @@ const slides = [
   },
   {
     image: "showcase-kitchen",
-    title: "Good Things Start Here.",
+    title: "Good things start here.",
     label: "Cook & Serve",
     category: "Kitchen Essentials",
     href: "#kitchen",
@@ -23,7 +23,7 @@ const slides = [
   },
   {
     image: "showcase-diy",
-    title: "For Your Next Little Fix.",
+    title: "For your next little fix.",
     label: "Fix & Finish",
     category: "DIY & Tools",
     href: "#diy",
@@ -32,7 +32,7 @@ const slides = [
   },
   {
     image: "showcase-play",
-    title: "A Little More Possibility.",
+    title: "A little more possibility.",
     label: "Create & Play",
     category: "Stationery & Toys",
     href: "#range",
@@ -43,7 +43,10 @@ const slides = [
 
 function Chevron({ previous = false }) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
       <path
         d={
           previous
@@ -78,28 +81,46 @@ export default function ProductShowcase() {
       "(prefers-reduced-motion: reduce)"
     );
 
-    const syncMotion = () => setReducedMotion(media.matches);
-    const syncVisibility = () => setPageVisible(!document.hidden);
+    const syncMotion = () => {
+      setReducedMotion(media.matches);
+    };
+
+    const syncVisibility = () => {
+      setPageVisible(!document.hidden);
+    };
 
     syncMotion();
     syncVisibility();
 
     media.addEventListener("change", syncMotion);
-    document.addEventListener("visibilitychange", syncVisibility);
+
+    document.addEventListener(
+      "visibilitychange",
+      syncVisibility
+    );
 
     const observer = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
+      ([entry]) => {
+        setVisible(entry.isIntersecting);
+      },
       { threshold: 0.2 }
     );
 
-    observer.observe(rootRef.current);
+    if (rootRef.current) {
+      observer.observe(rootRef.current);
+    }
 
     return () => {
-      media.removeEventListener("change", syncMotion);
+      media.removeEventListener(
+        "change",
+        syncMotion
+      );
+
       document.removeEventListener(
         "visibilitychange",
         syncVisibility
       );
+
       observer.disconnect();
     };
   }, []);
@@ -107,17 +128,22 @@ export default function ProductShowcase() {
   useEffect(() => {
     if (!playing) return;
 
-    const timer = window.setTimeout(
-      () => setActive((index) => (index + 1) % slides.length),
-      6500
-    );
+    const timer = window.setTimeout(() => {
+      setActive(
+        (index) => (index + 1) % slides.length
+      );
+    }, 6500);
 
-    return () => window.clearTimeout(timer);
+    return () => {
+      window.clearTimeout(timer);
+    };
   }, [active, playing]);
 
   function select(index) {
     setPaused(true);
-    setActive((index + slides.length) % slides.length);
+    setActive(
+      (index + slides.length) % slides.length
+    );
   }
 
   return (
@@ -126,13 +152,19 @@ export default function ProductShowcase() {
       ref={rootRef}
       aria-label="Discover our everyday essentials"
       aria-roledescription="carousel"
-      style={{ "--showcase-accent": slides[active].colour }}
+      style={{
+        "--showcase-accent": slides[active].colour,
+      }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocusCapture={(event) => {
         if (
-          !event.currentTarget.contains(event.relatedTarget) &&
-          !event.target.closest("[data-rotation-control]")
+          !event.currentTarget.contains(
+            event.relatedTarget
+          ) &&
+          !event.target.closest(
+            "[data-rotation-control]"
+          )
         ) {
           setPaused(true);
         }
@@ -143,8 +175,10 @@ export default function ProductShowcase() {
           event.key === "ArrowLeft"
         ) {
           event.preventDefault();
+
           select(
-            active + (event.key === "ArrowRight" ? 1 : -1)
+            active +
+              (event.key === "ArrowRight" ? 1 : -1)
           );
         }
       }}
@@ -154,7 +188,10 @@ export default function ProductShowcase() {
           <i /> THE EVERYDAY COLLECTION
         </span>
 
-        <span className="showcase-count" aria-hidden="true">
+        <span
+          className="showcase-count"
+          aria-hidden="true"
+        >
           0{active + 1} <span>/ 04</span>
         </span>
       </div>
@@ -192,27 +229,45 @@ export default function ProductShowcase() {
             Math.abs(dx) > 45 &&
             Math.abs(dx) > Math.abs(dy) * 1.4
           ) {
-            select(active + (dx < 0 ? 1 : -1));
+            select(
+              active + (dx < 0 ? 1 : -1)
+            );
           }
 
           touchStart.current = null;
         }}
       >
-        <div className="showcase-orbit" aria-hidden="true" />
-        <div className="showcase-floor" aria-hidden="true" />
+        <div
+          className="showcase-orbit"
+          aria-hidden="true"
+        />
+
+        <div
+          className="showcase-floor"
+          aria-hidden="true"
+        />
 
         <div className="showcase-deck">
           {slides.map((slide, index) => (
             <article
               key={slide.image}
               className={`showcase-slide showcase-position-${
-                (index - active + slides.length) % slides.length
-              }${active === index ? " is-active" : ""}`}
+                (index - active + slides.length) %
+                slides.length
+              }${
+                active === index
+                  ? " is-active"
+                  : ""
+              }`}
               aria-hidden={active !== index}
               inert={active !== index}
               role="group"
               aria-roledescription="slide"
-              aria-label={`${index + 1} of ${slides.length}: ${slide.category}`}
+              aria-label={`${
+                index + 1
+              } of ${slides.length}: ${
+                slide.category
+              }`}
             >
               <img
                 src={`/assets/${slide.image}-1000.webp`}
@@ -221,7 +276,9 @@ export default function ProductShowcase() {
                 width="1536"
                 height="1024"
                 alt={slide.alt}
-                fetchPriority={index === 0 ? "high" : "low"}
+                fetchPriority={
+                  index === 0 ? "high" : "low"
+                }
                 decoding="async"
                 draggable="false"
               />
@@ -237,20 +294,27 @@ export default function ProductShowcase() {
 
                 <a href={slide.href}>
                   {slide.category}
-                  <span aria-hidden="true">↗</span>
+                  <span aria-hidden="true">
+                    ↗
+                  </span>
                 </a>
               </div>
             </article>
           ))}
         </div>
 
-        <div className="showcase-seal" aria-hidden="true">
+        <div
+          className="showcase-seal"
+          aria-hidden="true"
+        >
           <span>BIG VALUE.</span>
+
           <strong>
             Everyday
             <br />
             finds.
           </strong>
+
           <span>EXTRA USEFUL.</span>
         </div>
       </div>
@@ -267,7 +331,9 @@ export default function ProductShowcase() {
               type="button"
               aria-label={`Show ${slide.category}`}
               aria-current={
-                active === index ? "true" : undefined
+                active === index
+                  ? "true"
+                  : undefined
               }
               onClick={() => select(index)}
             >
@@ -286,9 +352,14 @@ export default function ProductShowcase() {
                   ? "Start automatic slideshow"
                   : "Pause automatic slideshow"
               }
-              onClick={() => setPaused((value) => !value)}
+              onClick={() => {
+                setPaused((value) => !value);
+              }}
             >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
                 {paused ? (
                   <path d="m9 5 11 7-11 7Z" />
                 ) : (
@@ -323,7 +394,9 @@ export default function ProductShowcase() {
 
       <span
         className="sr-only"
-        aria-live={playing ? "off" : "polite"}
+        aria-live={
+          playing ? "off" : "polite"
+        }
         aria-atomic="true"
       >
         Slide {active + 1} of {slides.length}:{" "}

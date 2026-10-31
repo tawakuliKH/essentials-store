@@ -17,39 +17,52 @@ export default function About() {
             alt="The Essentials Store — Big Value. Everyday Prices."
           />
 
-          <span>YOUR LOCAL EVERYDAY STORE</span>
+          <span>
+            YOUR LOCAL EVERYDAY STORE
+          </span>
         </div>
 
         <div>
-          <p className="eyebrow">HELLO, NEIGHBOUR</p>
+          <p className="eyebrow">
+            HELLO, NEIGHBOUR
+          </p>
 
           <h2 id="about-title">
             The Essentials Store
             <br />
-            — Your Everyday Shop in Leeds
+            — your everyday shop in Leeds
           </h2>
 
           <p>
-            The Essentials Store is operated by Zwan Trading Ltd at
-            221 Harehills Lane, Leeds. We bring together kitchenware,
-            DIY tools, stationery, toys and household essentials in
-            one convenient local shop.
+            The Essentials Store is operated by Zwan Trading Ltd
+            at 221 Harehills Lane, Leeds. We bring together
+            kitchenware, DIY tools, stationery, toys and
+            household essentials in one convenient local shop.
           </p>
 
           <p>
-            From pots, cutlery and pressure cookers to screwdrivers,
-            screws and creative supplies, explore useful items for
-            your home and everyday life. Visit us in Harehills,
-            open seven days a week.
+            From pots, cutlery and pressure cookers to
+            screwdrivers, screws and creative supplies,
+            explore useful items for your home and everyday
+            life. Visit us in Harehills, open seven days a week.
           </p>
 
           <p>
-            <strong>Big Value. Everyday Prices.</strong>
+            <strong>
+              Big Value. Everyday Prices.
+            </strong>
           </p>
 
-          <a className="text-link" href="#visit">
+          <a
+            className="text-link"
+            href="#visit"
+          >
             Come and Have a Look
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
               <path d="M4 12h15m-6-6 6 6-6 6" />
             </svg>
           </a>
